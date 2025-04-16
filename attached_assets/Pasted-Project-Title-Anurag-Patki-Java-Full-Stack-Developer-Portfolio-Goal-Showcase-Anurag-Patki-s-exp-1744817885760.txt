@@ -1,0 +1,170 @@
+Project Title: Anurag Patki — Java Full‑Stack Developer Portfolio
+
+Goal:
+Showcase Anurag Patki’s expertise in Java full‑stack development, AI‑driven solutions, and leadership. Provide an engaging, modern, responsive portfolio with clear navigation, strong visuals, and interactive elements.
+
+1. Global Requirements
+Tech Stack:
+
+Frontend: React.js (Next.js optional), Tailwind CSS
+
+Animations: Framer Motion
+
+Icons: lucide‑react
+
+Charts (if needed): recharts
+
+Hosting: Vercel / Netlify
+
+Analytics: Google Analytics
+
+Design System:
+
+Color palette: neutral base (white/gray) + accent (teal or electric blue)
+
+Typography:
+
+Headings: text-3xl / font-bold
+
+Body: text-base / font-medium
+
+Components:
+
+Cards with 2xl rounded corners, soft shadows, hover effects
+
+Buttons: clear primary (filled) and secondary (outlined) variants
+
+Responsive grid layouts
+
+UX/UI Best Practices:
+
+Mobile‑first, responsive breakpoints (sm, md, lg, xl)
+
+Accessible: proper alt tags, ARIA labels, high contrast
+
+Fast load: optimized images (WebP), code splitting
+
+2. Site Structure & Content
+A. Navbar (Global)
+Left: Logo (stylized “AP”) + “Anurag Patki”
+
+Center: Links: Home · About · Projects · Skills · Contact
+
+Right: Social icons (GitHub, LinkedIn)
+
+B. Home (Hero)
+Full‑viewport hero with background gradient or subtle AI‑themed illustration.
+
+Headline:
+
+“Hi, I’m Anurag Patki — Java Full‑Stack Developer & AI Enthusiast”
+
+Subtext:
+
+“Building intelligent, scalable web applications with Java, React, and AI.”
+
+CTA Buttons:
+
+“View Projects” (scrolls to Projects)
+
+“Download Résumé” (PDF link)
+
+C. About
+Two‑column layout:
+
+Left: Professional headshot or illustrated avatar.
+
+Right:
+
+Summary:
+
+“I’m a Java Full‑Stack Developer specializing in AI‑driven solutions, with hands‑on experience in deep learning (ResNet, VGG), cloud (AWS), and database management.”
+
+Quick Facts:
+
+Location: India
+
+Education: B.Tech CSE, Dr. Babasaheb Ambedkar Technological University (CGPA 8.10)
+
+Certifications: Google Generative AI, Capgemini Java Full Stack, etc.
+
+D. Projects
+Grid of 3–4 project cards (2 columns on desktop, 1 on mobile). Each card:
+
+Screenshot or GIF thumbnail
+
+Title & role (e.g., “EduMetrics — Team Leader”)
+
+Tech stack icons (Java, TensorFlow, OpenCV, React)
+
+Short description (1–2 lines)
+
+“View Case Study” button linking to a modal or dedicated subpage
+
+Featured Project Spotlight (full‑width section for EduMetrics):
+
+Large image carousel
+
+Key achievements (attendance tracking via facial recognition, engagement monitoring)
+
+Live site link
+
+E. Skills
+Categorized skill lists with animated progress bars or icon badges:
+
+Programming: Java (★ ★ ★ ★ ★), Python, C/C++
+
+Frontend: HTML, CSS, JavaScript, Angular, React
+
+Databases: MySQL, MongoDB, SQLyog
+
+Cloud & Tools: AWS, Git/GitHub, Docker (if added)
+
+AI/ML: TensorFlow, OpenCV, DeepFace, VGG
+
+F. Contact
+Split layout:
+
+Left: Contact form (Name, Email, Message, Send button with hover animation)
+
+Right:
+
+Email: patkianurag@gmail.com
+
+Phone: +91 8263060120
+
+Social links (icons + hover effects)
+
+“Download Résumé” button
+
+3. Interactive & Visual Enhancements
+Smooth scroll for anchor links.
+
+Section reveal animations on scroll (Framer Motion).
+
+Hover tilts on project cards (react‑tilt).
+
+Dark mode toggle (optional).
+
+SEO & meta tags: title, description, Open Graph.
+
+4. AI‑Developer Prompt Example
+“Create a responsive React + Tailwind CSS portfolio website for ‘Anurag Patki’, a Java Full‑Stack Developer. Include pages: Home, About, Projects, Skills, Contact.
+
+Use a modern color palette (white/gray + teal accent).
+
+Hero section with headline, subtext, and CTA.
+
+About with photo and summary.
+
+Projects grid (EduMetrics featured) with cards, tech icons, descriptions, live/demo links.
+
+Skills section with animated progress bars.
+
+Contact form and contact info.
+
+Navbar with logo, links, social icons.
+
+Smooth scroll, reveal animations, hover effects.
+
+Optimize for performance and accessibility.”
