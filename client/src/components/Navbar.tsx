@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "@/hooks/use-mobile";
 import { Menu, X, Github, Linkedin, Code, Terminal } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Certifications", href: "#certifications" },
-  { name: "Contact", href: "#contact" }
+  { name: "Home", href: "#home", id: "home" },
+  { name: "About", href: "#about", id: "about" },
+  { name: "Projects", href: "#projects", id: "projects" },
+  { name: "Skills", href: "#skills", id: "skills" },
+  { name: "Certifications", href: "#certifications", id: "certifications" },
+  { name: "Contact", href: "#contact", id: "contact" }
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   // Toggle the menu
@@ -24,13 +25,33 @@ export default function Navbar() {
   // Close mobile menu when clicking links
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Handle scroll events for navbar styling changes
+  // Handle scroll events for navbar styling changes and active section detection
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      // Determine which section is currently in view
+      const scrollPosition = window.scrollY + 200; // Add offset for better detection
+      
+      // Get all sections and find the one currently visible
+      const sections = navLinks.map(link => document.getElementById(link.id));
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once on mount to set initial active section
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -54,7 +75,7 @@ export default function Navbar() {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-[#E0E0E0] hover:text-primary transition-colors font-mono"
+              className={`nav-item text-[#E0E0E0] hover:text-primary transition-colors font-mono ${activeSection === link.id ? 'active text-primary' : ''}`}
             >
               {link.name}
             </a>
@@ -113,7 +134,7 @@ export default function Navbar() {
               <a 
                 key={link.name}
                 href={link.href} 
-                className="py-2 text-[#E0E0E0] hover:text-primary transition-colors font-mono border-b border-[#333]"
+                className={`nav-item py-2 text-[#E0E0E0] hover:text-primary transition-colors font-mono border-b border-[#333] ${activeSection === link.id ? 'active text-primary' : ''}`}
                 onClick={closeMenu}
               >
                 {link.name}

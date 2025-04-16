@@ -7,7 +7,8 @@ import SkillsSection from "@/components/SkillsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { useEffect } from "react";
+import TransitionLine from "@/components/ui/TransitionLine";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   // Handle smooth scrolling when clicking on navigation links
@@ -36,6 +37,33 @@ export default function Home() {
     };
   }, []);
 
+  // State to track active section for transition animation
+  const [activeSection, setActiveSection] = useState("home");
+
+  // Update active section based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
+      const sections = ["home", "about", "projects", "skills", "certifications", "contact"];
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -44,11 +72,22 @@ export default function Home() {
     >
       <Navbar />
       <HeroSection />
+      
+      <TransitionLine isActive={activeSection === "about" || activeSection === "projects"} />
       <AboutSection />
+      
+      <TransitionLine isActive={activeSection === "projects" || activeSection === "skills"} />
       <ProjectsSection />
+      
+      <TransitionLine isActive={activeSection === "skills" || activeSection === "certifications"} />
       <SkillsSection />
+      
+      <TransitionLine isActive={activeSection === "certifications" || activeSection === "contact"} />
       <CertificationsSection />
+      
+      <TransitionLine isActive={activeSection === "contact"} />
       <ContactSection />
+      
       <Footer />
     </motion.div>
   );
