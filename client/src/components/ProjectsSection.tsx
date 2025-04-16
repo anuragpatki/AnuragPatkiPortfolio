@@ -150,7 +150,7 @@ export default function ProjectsSection() {
         
         {/* Other Projects Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 gap-12 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -159,50 +159,129 @@ export default function ProjectsSection() {
           {otherProjects.map((project) => (
             <motion.div 
               key={project.id}
-              className="dev-card bg-[#1E1E1E] overflow-hidden transition-all duration-300"
+              className="dev-card bg-[#1E1E1E] overflow-hidden transform transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
-              <div className="relative overflow-hidden">
-                <div className="absolute top-0 left-0 bg-[#1E1E1E] px-3 py-1 z-10 font-mono text-xs text-[#888]">
-                  <Code className="inline-block mr-1 w-4 h-4 text-primary" /> project_image.png
+              <div className="flex flex-col lg:flex-row">
+                <div className="lg:w-1/2 relative">
+                  <div className="absolute top-0 left-0 bg-[#1E1E1E] border-r border-b border-[#333] px-3 py-1 z-10 font-mono text-xs text-[#888]">
+                    <Code className="inline-block mr-1 w-4 h-4 text-primary" /> project_screenshot.png
+                  </div>
+                  <img 
+                    src={project.imageUrl}
+                    alt={`${project.title} Project Screenshot`}
+                    className="w-full h-full object-cover object-center brightness-75"
+                  />
                 </div>
-                <img 
-                  src={project.imageUrl}
-                  alt={`${project.title} Project`}
-                  className="w-full h-48 object-cover object-center brightness-75"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h4 className="font-bold text-white font-mono">{project.title}</h4>
-                  <span className="bg-primary text-white text-xs px-2 py-1 font-mono">
-                    {project.role}
-                  </span>
-                </div>
-                
-                <p className="text-[#E0E0E0] mb-4 text-sm font-mono">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech, index) => (
-                    <span 
-                      key={index}
-                      className="bg-[#333] text-[#E0E0E0] text-xs px-2 py-1 font-mono"
-                    >
-                      {tech}
+                <div className="lg:w-1/2 p-6 lg:p-8">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-xl font-bold text-white font-mono">{project.title}</h4>
+                    <span className="bg-primary text-white text-xs px-3 py-1 font-mono">
+                      {project.role}
                     </span>
-                  ))}
-                </div>
-                
-                <div className="border-t border-[#333] pt-4">
-                  <a 
-                    href="#" 
-                    className="text-primary hover:text-primary/80 font-medium flex items-center transition-colors font-mono"
-                  >
-                    <Info className="mr-2 h-4 w-4" /> View Details
-                  </a>
+                  </div>
+                  
+                  <p className="text-[#E0E0E0] mb-4 font-mono text-sm">
+                    {project.description}
+                  </p>
+                  
+                  <div className="code-block mb-4" data-language="Features">
+                    <h5 className="font-bold text-primary mb-2 font-mono">// Key Features</h5>
+                    <ul className="list-none ml-2 text-[#E0E0E0] space-y-1">
+                      {project.id === "graphical-password" && (
+                        <>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Secure and user-friendly alternative to text passwords</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Pattern-based authentication using custom graphics</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Enhanced security through visual memory capabilities</span>
+                          </li>
+                        </>
+                      )}
+                      
+                      {project.id === "fire-alarm" && (
+                        <>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Rapid fire detection and notification system</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Arduino-based implementation with IoT connectivity</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Automated emergency response triggering capabilities</span>
+                          </li>
+                        </>
+                      )}
+                      
+                      {project.id === "image-recommendation" && (
+                        <>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Deep learning-powered image analysis with ResNet</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">Personalized content recommendations based on user preferences</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary mr-2">→</span> 
+                            <span className="font-mono text-sm">High-accuracy classification and similarity detection</span>
+                          </li>
+                        </>
+                      )}
+                    </ul>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.techStack.map((tech, index) => (
+                      <span 
+                        key={index}
+                        className="bg-[#333] text-[#E0E0E0] text-xs px-3 py-1 font-mono inline-flex items-center"
+                      >
+                        <Braces className="inline-block mr-1 w-3 h-3 text-primary" />{tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-4 border-t border-[#333] pt-4">
+                    {project.liveUrl && (
+                      <a 
+                        href={project.liveUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-primary hover:text-primary/80 font-medium flex items-center transition-colors font-mono"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" /> Visit Website
+                      </a>
+                    )}
+                    
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#E0E0E0] hover:text-primary font-medium flex items-center transition-colors font-mono"
+                      >
+                        <Github className="mr-2 h-4 w-4" /> View Code
+                      </a>
+                    )}
+                    
+                    {!project.githubUrl && !project.liveUrl && (
+                      <span className="text-[#888] font-medium flex items-center font-mono">
+                        <Info className="mr-2 h-4 w-4" /> Project details available on request
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
