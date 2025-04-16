@@ -32,6 +32,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-sans antialiased bg-[#121212] text-[#E0E0E0];
     color-scheme: dark;
@@ -106,4 +110,31 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 .skill-progress-fill {
   @apply h-full bg-primary rounded-none;
   box-shadow: 0 0 10px var(--primary);
+}
+
+/* Nav item active indicator with animation */
+.nav-item {
+  position: relative;
+  @apply py-2;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  @apply bg-primary;
+  transition: width 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item.active::after {
+  width: 100%;
+  box-shadow: 0 0 8px var(--primary);
 }

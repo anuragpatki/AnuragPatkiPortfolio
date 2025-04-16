@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { education, workExperience, certifications, professionalSummary, contactInfo } from "@/lib/resume-data";
-import { Database, User, GraduationCap, Briefcase, Award, Terminal } from "lucide-react";
+import { Database, User, GraduationCap, Briefcase, Award, Terminal, Github, Linkedin } from "lucide-react";
 
 export default function AboutSection() {
   const containerVariants = {
@@ -62,12 +62,48 @@ export default function AboutSection() {
                     <Terminal className="text-primary h-16 w-16" />
                   </div>
                 )}
-                <div className="absolute top-3 right-3 text-xs text-primary font-mono bg-[#121212] border border-primary px-2 py-1">
-                  developer.profile
-                </div>
               </div>
               <div className="absolute top-0 left-0 border-t border-l border-primary w-10 h-10 -mt-1 -ml-1"></div>
               <div className="absolute bottom-0 right-0 border-b border-r border-primary w-10 h-10 -mb-1 -mr-1"></div>
+              
+              <div className="mt-4 flex justify-center gap-3">
+                <a 
+                  href={contactInfo.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-[#1E1E1E] hover:bg-primary/10 border border-[#333] hover:border-primary text-[#E0E0E0] p-2 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a 
+                  href={contactInfo.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-[#1E1E1E] hover:bg-primary/10 border border-[#333] hover:border-primary text-[#E0E0E0] p-2 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a 
+                  href={contactInfo.hackerrank} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-[#1E1E1E] hover:bg-primary/10 border border-[#333] hover:border-primary text-[#E0E0E0] p-2 transition-colors font-mono text-sm"
+                  aria-label="HackerRank"
+                >
+                  HR
+                </a>
+                <a 
+                  href={contactInfo.codechef} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-[#1E1E1E] hover:bg-primary/10 border border-[#333] hover:border-primary text-[#E0E0E0] p-2 transition-colors font-mono text-sm"
+                  aria-label="CodeChef"
+                >
+                  CC
+                </a>
+              </div>
             </div>
           </motion.div>
           
