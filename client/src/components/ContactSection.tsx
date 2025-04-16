@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Terminal, MessageSquare, FileDown, Code } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { contactInfo } from "@/lib/resume-data";
 
@@ -73,16 +73,25 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-neutral-50">
+    <section id="contact" className="py-20 bg-[#121212]">
       <div className="container mx-auto px-4">
+        <div className="flex items-center justify-center mb-8">
+          <div className="h-px w-12 bg-[#333] mr-4"></div>
+          <MessageSquare className="text-primary w-6 h-6 mr-2" />
+          <span className="text-[#888] font-mono text-sm">04.</span>
+          <div className="h-px w-12 bg-[#333] ml-4"></div>
+        </div>
+        
         <motion.h2 
-          className="text-3xl font-bold text-center mb-16"
+          className="text-3xl font-bold text-center mb-16 font-mono"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+          <span className="text-primary">{"{"}</span>
           Get In Touch
+          <span className="text-primary">{"}"}</span>
         </motion.h2>
         
         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
@@ -95,9 +104,19 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-white rounded-2xl p-8 shadow-md"
+              className="bg-[#1E1E1E] border border-[#333] p-8"
               variants={itemVariants}
             >
+              <div className="flex items-center mb-6">
+                <div className="h-8 w-8 bg-primary text-white flex items-center justify-center mr-3">
+                  <Terminal className="h-4 w-4" />
+                </div>
+                <div className="font-mono text-white">
+                  <div className="text-sm text-[#888]">// contact_form.js</div>
+                  <div>Send me a message</div>
+                </div>
+              </div>
+              
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
@@ -105,15 +124,18 @@ export default function ContactSection() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-neutral-700 font-medium">Your Name</FormLabel>
+                        <FormLabel className="text-[#E0E0E0] font-medium font-mono flex items-center">
+                          <span className="text-primary mr-2">const</span>
+                          your_name
+                        </FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="John Doe" 
                             {...field} 
-                            className="px-4 py-3 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="px-4 py-3 border border-[#333] bg-[#121212] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-mono"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -123,16 +145,19 @@ export default function ContactSection() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-neutral-700 font-medium">Email Address</FormLabel>
+                        <FormLabel className="text-[#E0E0E0] font-medium font-mono flex items-center">
+                          <span className="text-primary mr-2">let</span>
+                          email_address
+                        </FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="john@example.com" 
                             type="email" 
                             {...field} 
-                            className="px-4 py-3 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="px-4 py-3 border border-[#333] bg-[#121212] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-mono"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -142,26 +167,32 @@ export default function ContactSection() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-neutral-700 font-medium">Message</FormLabel>
+                        <FormLabel className="text-[#E0E0E0] font-medium font-mono flex items-center">
+                          <span className="text-primary mr-2">function</span>
+                          your_message() {'{'} 
+                        </FormLabel>
                         <FormControl>
                           <Textarea 
-                            placeholder="How can I help you?" 
+                            placeholder="return 'Your message here';" 
                             rows={5} 
                             {...field} 
-                            className="px-4 py-3 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="px-4 py-3 border border-[#333] bg-[#121212] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-mono"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <div className="text-[#E0E0E0] font-mono">{'}'}</div>
+                        <FormMessage className="text-red-400" />
                       </FormItem>
                     )}
                   />
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+                    className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 transition-colors flex items-center justify-center font-mono"
                     disabled={isSubmitting}
                   >
+                    <span className="mr-2">{'{'}</span>
                     <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                    <span className="mx-2">{'}'}</span>
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
@@ -178,21 +209,32 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-white rounded-2xl p-8 shadow-md h-full"
+              className="bg-[#1E1E1E] border border-[#333] p-8 h-full font-mono"
               variants={itemVariants}
             >
-              <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+              <div className="flex items-center mb-6">
+                <div className="h-8 w-8 bg-primary text-white flex items-center justify-center mr-3">
+                  <Code className="h-4 w-4" />
+                </div>
+                <div className="text-white">
+                  <div className="text-sm text-[#888]">// contact_info.js</div>
+                  <div>Reach out anytime</div>
+                </div>
+              </div>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-primary text-white p-3 rounded-full mr-4">
+                  <div className="bg-[#121212] text-primary p-3 border border-[#333] mr-4">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-neutral-800">Email</h4>
+                    <div className="text-[#888]">// Email</div>
+                    <h4 className="font-medium text-white">
+                      <span className="text-primary">const</span> email
+                    </h4>
                     <a 
                       href={`mailto:${contactInfo.email}`} 
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      className="text-[#E0E0E0] hover:text-primary transition-colors"
                     >
                       {contactInfo.email}
                     </a>
@@ -200,14 +242,17 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-primary text-white p-3 rounded-full mr-4">
+                  <div className="bg-[#121212] text-primary p-3 border border-[#333] mr-4">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-neutral-800">Phone</h4>
+                    <div className="text-[#888]">// Phone</div>
+                    <h4 className="font-medium text-white">
+                      <span className="text-primary">const</span> phone
+                    </h4>
                     <a 
                       href={`tel:${contactInfo.phone}`} 
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      className="text-[#E0E0E0] hover:text-primary transition-colors"
                     >
                       {contactInfo.phone}
                     </a>
@@ -215,23 +260,26 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-primary text-white p-3 rounded-full mr-4">
+                  <div className="bg-[#121212] text-primary p-3 border border-[#333] mr-4">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-neutral-800">Location</h4>
-                    <p className="text-neutral-600">{contactInfo.location}</p>
+                    <div className="text-[#888]">// Location</div>
+                    <h4 className="font-medium text-white">
+                      <span className="text-primary">const</span> location
+                    </h4>
+                    <p className="text-[#E0E0E0]">{contactInfo.location}</p>
                   </div>
                 </div>
                 
-                <div className="pt-6">
-                  <h4 className="font-medium text-neutral-800 mb-3">Connect With Me</h4>
+                <div className="pt-6 border-t border-[#333]">
+                  <div className="text-[#888] mb-3">// Social Profiles</div>
                   <div className="flex space-x-4">
                     <a 
                       href={contactInfo.github} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="bg-neutral-100 hover:bg-neutral-200 text-neutral-700 p-3 rounded-full transition-colors"
+                      className="bg-[#121212] hover:bg-primary/10 border border-[#333] hover:border-primary text-[#E0E0E0] p-3 transition-colors"
                       aria-label="GitHub"
                     >
                       <Github className="h-5 w-5" />
@@ -240,7 +288,7 @@ export default function ContactSection() {
                       href={contactInfo.linkedin} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-neutral-100 hover:bg-neutral-200 text-neutral-700 p-3 rounded-full transition-colors"
+                      className="bg-[#121212] hover:bg-primary/10 border border-[#333] hover:border-primary text-[#E0E0E0] p-3 transition-colors"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="h-5 w-5" />
@@ -251,12 +299,30 @@ export default function ContactSection() {
                 <div className="pt-4">
                   <Button 
                     asChild
-                    className="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                    variant="outline"
+                    className="bg-transparent border-primary text-primary hover:bg-primary hover:text-white transition-colors font-mono flex items-center"
                   >
                     <a href="/api/download-resume" download="Anurag_Patki_Resume.pdf">
-                      Download Résumé
+                      <FileDown className="mr-2 h-4 w-4" />
+                      <span className="mr-1">downloadResume()</span>
                     </a>
                   </Button>
+                </div>
+                
+                <div className="pt-4 text-xs text-[#888]">
+                  <div className="terminal p-3">
+                    <div className="flex items-center mb-2">
+                      <div className="w-2 h-2 rounded-full bg-red-500 mr-2"></div>
+                      <div className="w-2 h-2 rounded-full bg-yellow-500 mr-2"></div>
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    </div>
+                    <div className="text-green-400">
+                      $ status --available-for-hire<br />
+                      <span className="text-[#E0E0E0]">
+                        <span className="status-indicator status-active"></span> Currently available for new opportunities
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
