@@ -23,6 +23,8 @@ export type Project = {
 
 export type Certification = {
   name: string;
+  issuer: string;
+  category: string;
 };
 
 export type Education = {
@@ -140,11 +142,58 @@ export const projectsData: Project[] = [
 ];
 
 export const certifications: Certification[] = [
-  { name: "Google Generative AI" },
-  { name: "Large Language Models" },
-  { name: "Responsible AI" },
-  { name: "Certified Java Full Stack Professional" },
-  { name: "C/C++ Programming" }
+  // Google Certifications
+  { 
+    name: "Introduction to Generative AI", 
+    issuer: "Google",
+    category: "AI & Machine Learning"
+  },
+  { 
+    name: "Introduction to Large Language Models", 
+    issuer: "Google",
+    category: "AI & Machine Learning"
+  },
+  { 
+    name: "Introduction to Responsible AI", 
+    issuer: "Google",
+    category: "AI & Machine Learning"
+  },
+  { 
+    name: "Generative AI Fundamentals", 
+    issuer: "Google",
+    category: "AI & Machine Learning"
+  },
+  
+  // Capgemini, Edubridge Certification
+  { 
+    name: "Certified Java Full Stack Professional", 
+    issuer: "Capgemini, Edubridge",
+    category: "Software Development"
+  },
+  
+  // State Institute of Information Technology Certifications
+  { 
+    name: "Certificate course in C programming", 
+    issuer: "State Institute of Information Technology",
+    category: "Programming Languages"
+  },
+  { 
+    name: "Certificate course in C++ programming", 
+    issuer: "State Institute of Information Technology",
+    category: "Programming Languages"
+  },
+  { 
+    name: "Certificate course in Java programming", 
+    issuer: "State Institute of Information Technology",
+    category: "Programming Languages"
+  },
+  
+  // LinkedIn Learning Certification
+  { 
+    name: "Generative AI: The Evolution of Thoughtful Online Search", 
+    issuer: "LinkedIn Learning",
+    category: "AI & Machine Learning"
+  }
 ];
 
 export const education: Education = {
@@ -183,5 +232,6 @@ export const contactInfo = {
   phone: "+91 8263060120",
   location: "India",
   github: "https://github.com/anuragpatki",
-  linkedin: "https://linkedin.com/in/anurag-patki"
+  linkedin: "https://linkedin.com/in/anurag-patki",
+  profileImage: "/assets/anurag_profile.jpg"
 };

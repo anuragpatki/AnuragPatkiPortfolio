@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { education, workExperience, certifications, professionalSummary } from "@/lib/resume-data";
+import { education, workExperience, certifications, professionalSummary, contactInfo } from "@/lib/resume-data";
 import { Database, User, GraduationCap, Briefcase, Award, Terminal } from "lucide-react";
 
 export default function AboutSection() {
@@ -50,16 +50,24 @@ export default function AboutSection() {
             variants={itemVariants}
           >
             <div className="relative">
-              <div className="w-60 h-60 bg-[#1E1E1E] border border-[#333] flex items-center justify-center text-white text-5xl font-bold">
-                <div className="font-mono relative">
-                  <Terminal className="text-primary h-16 w-16" />
-                  <div className="absolute -top-4 -right-4 text-xs text-primary font-mono border border-primary px-2 py-1">
-                    const developer = new Developer();
+              <div className="w-64 h-64 bg-[#1E1E1E] border border-[#333] p-2 overflow-hidden">
+                {contactInfo.profileImage ? (
+                  <img 
+                    src={contactInfo.profileImage} 
+                    alt="Anurag Patki" 
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Terminal className="text-primary h-16 w-16" />
                   </div>
+                )}
+                <div className="absolute top-3 right-3 text-xs text-primary font-mono bg-[#121212] border border-primary px-2 py-1">
+                  developer.profile
                 </div>
               </div>
-              <div className="absolute top-0 left-0 border-t border-l border-primary w-10 h-10"></div>
-              <div className="absolute bottom-0 right-0 border-b border-r border-primary w-10 h-10"></div>
+              <div className="absolute top-0 left-0 border-t border-l border-primary w-10 h-10 -mt-1 -ml-1"></div>
+              <div className="absolute bottom-0 right-0 border-b border-r border-primary w-10 h-10 -mb-1 -mr-1"></div>
             </div>
           </motion.div>
           
