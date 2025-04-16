@@ -132,28 +132,16 @@ export default function AboutSection() {
             </motion.div>
             
             <motion.div 
-              className="flex items-center mb-4"
+              className="flex items-center justify-end mt-6"
               variants={itemVariants}
             >
-              <Award className="w-5 h-5 mr-3 text-primary" />
-              <h3 className="text-2xl font-bold text-white font-mono">
-                Certifications
-              </h3>
-            </motion.div>
-            
-            <motion.div 
-              className="flex flex-wrap gap-3"
-              variants={itemVariants}
-            >
-              {certifications.map((cert, index) => (
-                <span 
-                  key={index} 
-                  className="bg-[#1E1E1E] border border-[#333] text-[#E0E0E0] px-3 py-1 text-sm font-mono inline-flex items-center"
-                >
-                  <span className="text-primary mr-2">•</span>
-                  {cert.name}
-                </span>
-              ))}
+              <a 
+                href="#certifications" 
+                className="text-primary hover:text-primary/80 transition-all font-mono flex items-center group"
+              >
+                <span>View my certifications</span>
+                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform">→</span>
+              </a>
             </motion.div>
           </div>
         </motion.div>
