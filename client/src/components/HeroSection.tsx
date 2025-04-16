@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { FileDown, ArrowDown, Code, Terminal, Database, TerminalSquare } from "lucide-react";
+import { FileDown, ArrowDown, Code, Terminal, Database, TerminalSquare, FileText } from "lucide-react";
+import { contactInfo } from "@/lib/resume-data";
 
 export default function HeroSection() {
-  const handleDownloadResume = () => {
-    // Create a link and trigger download
-    const link = document.createElement('a');
-    link.href = '/api/download-resume';
-    link.download = 'Anurag_Patki_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // Download and view resume are handled through links directly
 
   return (
     <section 
@@ -105,15 +98,31 @@ export default function HeroSection() {
             </Button>
             
             <Button 
-              onClick={handleDownloadResume}
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-white py-3 px-8 transition-all font-mono"
+            >
+              <a href={contactInfo.resumeViewLink} target="_blank" rel="noopener noreferrer">
+                <span className="mr-2">{'<'}</span>
+                View Resume
+                <span className="ml-2">{'>'}</span>
+                <FileText className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+
+            <Button 
+              asChild
               variant="outline"
               size="lg"
               className="border-secondary text-secondary hover:bg-secondary hover:text-white py-3 px-8 transition-all font-mono"
             >
-              <span className="mr-2">{'{'}</span>
-              Download CV
-              <span className="ml-2">{'}'}</span>
-              <FileDown className="ml-2 h-4 w-4" />
+              <a href={contactInfo.resumeDownloadLink} download="Anurag_Patki_Resume.pdf">
+                <span className="mr-2">{'{'}</span>
+                Download CV
+                <span className="ml-2">{'}'}</span>
+                <FileDown className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </motion.div>
           

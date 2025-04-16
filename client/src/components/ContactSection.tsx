@@ -302,7 +302,7 @@ export default function ContactSection() {
                     variant="outline"
                     className="bg-transparent border-primary text-primary hover:bg-primary hover:text-white transition-colors font-mono flex items-center"
                   >
-                    <a href="/api/download-resume" download="Anurag_Patki_Resume.pdf">
+                    <a href={contactInfo.resumeDownloadLink} download="Anurag_Patki_Resume.pdf">
                       <FileDown className="mr-2 h-4 w-4" />
                       <span className="mr-1">downloadResume()</span>
                     </a>

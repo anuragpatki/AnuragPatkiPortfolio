@@ -233,5 +233,7 @@ export const contactInfo = {
   location: "India",
   github: "https://github.com/anuragpatki",
   linkedin: "https://linkedin.com/in/anurag-patki",
-  profileImage: "/assets/anurag_profile.jpg"
+  profileImage: "https://github.com/anuragpatki/Edumetrics/blob/main/IMG_20230822_211111.jpg?raw=true",
+  resumeViewLink: "https://drive.google.com/file/d/1lU4fg8IyKag3zSOiR3okSTQLYBrtLFxv/view?usp=sharing",
+  resumeDownloadLink: "https://drive.google.com/uc?export=download&id=1lU4fg8IyKag3zSOiR3okSTQLYBrtLFxv"
 };
