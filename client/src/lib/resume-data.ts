@@ -50,8 +50,8 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "Java", proficiency: 95 },
       { name: "Python", proficiency: 85 },
-      { name: "C/C++", proficiency: 80 }
-    ]
+      { name: "C/C++", proficiency: 80 },
+    ],
   },
   {
     name: "Frontend",
@@ -59,8 +59,8 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "HTML/CSS", proficiency: 90 },
       { name: "JavaScript", proficiency: 85 },
-      { name: "Angular", proficiency: 75 }
-    ]
+      { name: "Angular", proficiency: 75 },
+    ],
   },
   {
     name: "Databases",
@@ -68,8 +68,8 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "MySQL", proficiency: 90 },
       { name: "MongoDB", proficiency: 80 },
-      { name: "SQL", proficiency: 85 }
-    ]
+      { name: "SQL", proficiency: 85 },
+    ],
   },
   {
     name: "AI/ML",
@@ -77,8 +77,8 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "TensorFlow", proficiency: 85 },
       { name: "OpenCV", proficiency: 80 },
-      { name: "Deep Learning", proficiency: 75 }
-    ]
+      { name: "Deep Learning", proficiency: 75 },
+    ],
   },
   {
     name: "Tools & Cloud",
@@ -86,8 +86,8 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "Git/GitHub", proficiency: 90 },
       { name: "AWS", proficiency: 75 },
-      { name: "IDEs (Eclipse, VSCode)", proficiency: 95 }
-    ]
+      { name: "IDEs (Eclipse, VSCode)", proficiency: 95 },
+    ],
   },
   {
     name: "Soft Skills",
@@ -95,9 +95,9 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "Team Leadership", proficiency: 90 },
       { name: "Problem Solving", proficiency: 95 },
-      { name: "Communication", proficiency: 85 }
-    ]
-  }
+      { name: "Communication", proficiency: 85 },
+    ],
+  },
 ];
 
 export const projectsData: Project[] = [
@@ -105,102 +105,110 @@ export const projectsData: Project[] = [
     id: "edumetrics",
     title: "EduMetrics",
     role: "Team Leader",
-    description: "A revolutionary step in education featuring AI-powered facial recognition for attendance tracking and engagement monitoring through facial expressions, body language, and gestures.",
+    description:
+      "A revolutionary step in education featuring AI-powered facial recognition for attendance tracking and engagement monitoring through facial expressions, body language, and gestures.",
     techStack: ["Java", "TensorFlow", "OpenCV", "DeepFace", "JavaScript"],
-    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    imageUrl:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     liveUrl: "https://edumetrics.netlify.app/",
     githubUrl: "https://github.com/anuragpatki",
-    featured: true
+    featured: true,
   },
   {
     id: "graphical-password",
     title: "Graphical Password Authentication",
     role: "Team Leader",
-    description: "A novel authentication system using graphical passwords as a secure and user-friendly alternative to traditional text passwords.",
+    description:
+      "A novel authentication system using graphical passwords as a secure and user-friendly alternative to traditional text passwords.",
     techStack: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    featured: false
+    imageUrl:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    featured: false,
   },
   {
     id: "fire-alarm",
     title: "Fire Alarm System",
     role: "Team Leader",
-    description: "An IoT-powered fire alarm system using Arduino, ensuring swift and effective response to fire emergencies.",
+    description:
+      "An IoT-powered fire alarm system using Arduino, ensuring swift and effective response to fire emergencies.",
     techStack: ["Arduino", "IoT", "C++"],
-    imageUrl: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    featured: false
+    imageUrl:
+      "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    featured: false,
   },
   {
     id: "image-recommendation",
     title: "Image Recommendation System",
     role: "Developer",
-    description: "A system using ResNet for personalized, high-accuracy content recommendations based on image analysis.",
+    description:
+      "A system using ResNet for personalized, high-accuracy content recommendations based on image analysis.",
     techStack: ["Python", "ResNet", "Deep Learning"],
-    imageUrl: "https://images.unsplash.com/photo-1558346547-4439467bd1d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    featured: false
-  }
+    imageUrl:
+      "https://images.unsplash.com/photo-1558346547-4439467bd1d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    featured: false,
+  },
 ];
 
 export const certifications: Certification[] = [
   // Google Certifications
-  { 
-    name: "Introduction to Generative AI", 
+  {
+    name: "Introduction to Generative AI",
     issuer: "Google",
-    category: "AI & Machine Learning"
+    category: "AI & Machine Learning",
   },
-  { 
-    name: "Introduction to Large Language Models", 
+  {
+    name: "Introduction to Large Language Models",
     issuer: "Google",
-    category: "AI & Machine Learning"
+    category: "AI & Machine Learning",
   },
-  { 
-    name: "Introduction to Responsible AI", 
+  {
+    name: "Introduction to Responsible AI",
     issuer: "Google",
-    category: "AI & Machine Learning"
+    category: "AI & Machine Learning",
   },
-  { 
-    name: "Generative AI Fundamentals", 
+  {
+    name: "Generative AI Fundamentals",
     issuer: "Google",
-    category: "AI & Machine Learning"
+    category: "AI & Machine Learning",
   },
-  
+
   // Capgemini, Edubridge Certification
-  { 
-    name: "Certified Java Full Stack Professional", 
+  {
+    name: "Certified Java Full Stack Professional",
     issuer: "Capgemini, Edubridge",
-    category: "Software Development"
+    category: "Software Development",
   },
-  
+
   // State Institute of Information Technology Certifications
-  { 
-    name: "Certificate course in C programming", 
+  {
+    name: "Certificate course in C programming",
     issuer: "State Institute of Information Technology",
-    category: "Programming Languages"
+    category: "Programming Languages",
   },
-  { 
-    name: "Certificate course in C++ programming", 
+  {
+    name: "Certificate course in C++ programming",
     issuer: "State Institute of Information Technology",
-    category: "Programming Languages"
+    category: "Programming Languages",
   },
-  { 
-    name: "Certificate course in Java programming", 
+  {
+    name: "Certificate course in Java programming",
     issuer: "State Institute of Information Technology",
-    category: "Programming Languages"
+    category: "Programming Languages",
   },
-  
+
   // LinkedIn Learning Certification
-  { 
-    name: "Generative AI: The Evolution of Thoughtful Online Search", 
+  {
+    name: "Generative AI: The Evolution of Thoughtful Online Search",
     issuer: "LinkedIn Learning",
-    category: "AI & Machine Learning"
-  }
+    category: "AI & Machine Learning",
+  },
 ];
 
 export const education: Education = {
   degree: "B.Tech in Computer Science and Engineering",
   institution: "Dr. Babasaheb Ambedkar Technological University",
   period: "Jun 2020 – Jun 2024",
-  gpa: "8.10/10.0"
+  gpa: "8.10/10.0",
 };
 
 export const workExperience: WorkExperience[] = [
@@ -210,22 +218,23 @@ export const workExperience: WorkExperience[] = [
     period: "Feb 2024 – Present",
     responsibilities: [
       "Automated data extraction and integration from databases to Google Sheets, improving accessibility and accuracy.",
-      "Developing an image recommendation system using ResNet, optimizing deep learning for personalized, high-accuracy content suggestions."
+      "Developing an image recommendation system using ResNet, optimizing deep learning for personalized, high-accuracy content suggestions.",
     ],
-    githubUrl: "https://github.com/anuragpatki/Acme-Infovision-Projects"
+    githubUrl: "https://github.com/anuragpatki/Acme-Infovision-Projects",
   },
   {
     role: "Java Developer Intern",
     company: "Oasis Infobyte",
     period: "Sep 2023 – Oct 2023",
     responsibilities: [
-      "Successfully developed various Java applications like an online reservation system, a number guessing game with three difficulty levels, an ATM interface, an online examination portal, and a digital library management system."
+      "Successfully developed various Java applications like an online reservation system, a number guessing game with three difficulty levels, an ATM interface, an online examination portal, and a digital library management system.",
     ],
-    githubUrl: "https://github.com/anuragpatki/OIBSIP"
-  }
+    githubUrl: "https://github.com/anuragpatki/OIBSIP",
+  },
 ];
 
-export const professionalSummary = "Java Full Stack Developer with expertise in AI-driven solutions, database management, and full-Stack development. Proficient in Java, Python, SQL, and AI frameworks. Led projects in AI-powered facial recognition, IoT, and authentication systems. Strong problem solving, leadership, and cloud technology experience (AWS, GitHub).";
+export const professionalSummary =
+  "Java Full Stack Developer with expertise in AI-driven solutions, database management, and full-Stack development. Proficient in Java, Python, SQL, and AI frameworks. Led projects in AI-powered facial recognition, IoT, and authentication systems. Strong problem solving, leadership, and cloud technology experience (AWS, GitHub).";
 
 export const contactInfo = {
   email: "patkianurag@gmail.com",
@@ -233,9 +242,12 @@ export const contactInfo = {
   location: "India",
   github: "https://github.com/anuragpatki",
   linkedin: "https://linkedin.com/in/anurag-patki",
-  hackerrank: "https://www.hackerrank.com/profile/anuragpatki",
-  codechef: "https://www.codechef.com/users/anuragpatki",
-  profileImage: "https://github.com/anuragpatki/Edumetrics/blob/main/IMG_20230822_211111.jpg?raw=true",
-  resumeViewLink: "https://drive.google.com/file/d/1lU4fg8IyKag3zSOiR3okSTQLYBrtLFxv/view?usp=sharing",
-  resumeDownloadLink: "https://drive.google.com/uc?export=download&id=1lU4fg8IyKag3zSOiR3okSTQLYBrtLFxv"
+  hackerrank: "https://www.hackerrank.com/profile/patkianurag",
+  codechef: "https://www.codechef.com/users/anuragp16",
+  profileImage:
+    "https://github.com/anuragpatki/Edumetrics/blob/main/IMG_20230822_211111.jpg?raw=true",
+  resumeViewLink:
+    "https://drive.google.com/file/d/1lU4fg8IyKag3zSOiR3okSTQLYBrtLFxv/view?usp=sharing",
+  resumeDownloadLink:
+    "https://drive.google.com/uc?export=download&id=1lU4fg8IyKag3zSOiR3okSTQLYBrtLFxv",
 };
